@@ -5,17 +5,16 @@
 #include "ssi.h"
 #include "cgi.h"
 #include "servo.h"
-#include "motor.h"
-
-
-/*
-    WIFI Credentials
-*/
-const char WIFI_SSID[] = "WLAN1_home";
-const char WIFI_PASSWORD[] = "rX16Hba7HvZ";
+// #include "motor.h"
 
 int main(void)
 {
+    /*
+    WIFI Credentials
+    */
+    const char wifiSSID[] = "WLAN1_home";
+    const char wifiPASSWORD[] = "rX16Hba7HvZ";
+
     /*
         Initialise all needed resources
     */
@@ -27,30 +26,32 @@ int main(void)
     /*
         Attempting to connect to the WiFI
     */
-    while (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000))
+    //! while (cyw43_arch_wifi_connect_timeout_ms(wifiSSID, wifiPASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000))
+    while (true == cyw43_arch_wifi_connect_timeout_ms(wifiSSID, wifiPASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000))
     {
-        printf("\nAttempting to connect...");
+        (void)printf("\nAttempting to connect...");
     }
 
     /*
         Connected to the newtwork
     */
-    printf("\nConnected to the network.");
+    (void)printf("\nConnected to the network.");
 
     /*
         Initialise HTTP server
     */
     httpd_init();
-    printf("\nHTTP Server initialised!");
+    (void)printf("\nHTTP Server initialised!");
 
     ssi_init();
-    printf("\nSSI Handler inistialised!");
+    (void)printf("\nSSI Handler inistialised!");
 
     cgi_init();
-    printf("\nCGI Handler initialised!");
+    (void)printf("\nCGI Handler initialised!");
 
-    setServo(15,1500);
+    setServo(15, 1500);
 
-    while (1)
-        ;
+    while (true)
+    {
+    }
 }

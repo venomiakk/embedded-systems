@@ -1,339 +1,45 @@
-cgi.h:14:33: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.7]
-const char *cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
-                                ^
-cgi.h:37:35: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.7]
-const char *cgi_servo_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]) {
-                                  ^
-cgi.h:75:35: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.7]
-const char *cgi_motor_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]) {
-                                  ^
-ssi.h:44:14: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.2]
-void ssi_init() {
+[1mssi.h:8:14: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.2][0m
+void ssi_init();
              ^
-ssi.h:6:14: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4]
-const char * ssi_tags[] = {"volt","temp","led"};
-             ^
-cgi.h:7:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4]
-const int SERVO_PIN = 15;
-          ^
-cgi.h:8:5: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4]
-int SERVO_POS = 1500;
-    ^
-cgi.h:9:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4]
-const int MOTOR_PWM_PIN=16;
-          ^
-cgi.h:10:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4]
-const int MOTOR_CW_PIN=17;
-          ^
-cgi.h:11:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4]
-const int MOTOR_ACW_PIN=18;
-          ^
-main.c:14:12: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4]
+[1mmain.c:14:12: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4][0m
 const char WIFI_SSID[] = "WLAN1_home";
            ^
-main.c:15:12: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4]
+[1mmain.c:15:12: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4][0m
 const char WIFI_PASSWORD[] = "rX16Hba7HvZ";
            ^
-cgi.h:114:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.9]
-static const tCGI cgi_handlers[] = {
-                  ^
-ssi.h:13:52: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-10.1]
-      const float voltage = adc_read() * 3.3f / (1 << 12);
-                                                   ^
-ssi.h:19:50: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-10.1]
-    const float voltage = adc_read() * 3.3f / (1 << 12);
-                                                 ^
-main.c:30:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-14.4]
+[1mmain.c:30:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-14.4][0m
     while (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000))
           ^
-main.c:54:5: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.6]
+[1mmain.c:54:5: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.6][0m
     while (1)
     ^
-cgi.h:29:9: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.7]
-        }
-        ^
-cgi.h:67:9: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.7]
-        }
-        ^
-cgi.h:105:9: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.7]
-        }
-        ^
-cgi.h:22:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-            printf("\nLED OFF");
-                  ^
-cgi.h:27:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-            printf("\nLED ON");
-                  ^
-cgi.h:45:23: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-                printf("prawo\n");
-                      ^
-cgi.h:54:23: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-                printf("lewo\n");
-                      ^
-cgi.h:63:23: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-                printf("lewo\n");
-                      ^
-cgi.h:84:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-            printf("jedziemy do przodu\n");
-                  ^
-cgi.h:92:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-            printf("jedziemy do tylu\n");
-                  ^
-cgi.h:100:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-            printf("STOP\n");
-                  ^
-cgi.h:103:23: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
-            motor_move(slice, chan, 0, 0);
-                      ^
-main.c:32:15: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+[1mmain.c:32:15: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
         printf("\nAttempting to connect...");
               ^
-main.c:38:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+[1mmain.c:38:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
     printf("\nConnected to the network.");
           ^
-main.c:44:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+[1mmain.c:44:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
     printf("\nHTTP Server initialised!");
           ^
-main.c:47:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+[1mmain.c:47:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
     printf("\nSSI Handler inistialised!");
           ^
-main.c:50:11: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+[1mmain.c:50:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
     printf("\nCGI Handler initialised!");
           ^
-lwipopts.h:12:2: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-20.9]
-#if PICO_CYW43_ARCH_POLL
- ^
-lwipopts.h:6:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define NO_SYS                      1
+[1mcgi.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define CGI_H
 ^
-lwipopts.h:10:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_SOCKET                 0
-^
-lwipopts.h:13:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEM_LIBC_MALLOC             1
-^
-lwipopts.h:18:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEM_ALIGNMENT               4
-^
-lwipopts.h:19:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEM_SIZE                    4000
-^
-lwipopts.h:20:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEMP_NUM_TCP_SEG            32
-^
-lwipopts.h:21:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEMP_NUM_ARP_QUEUE          10
-^
-lwipopts.h:22:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define PBUF_POOL_SIZE              24
-^
-lwipopts.h:23:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_ARP                    1
-^
-lwipopts.h:24:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_ETHERNET               1
-^
-lwipopts.h:25:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_ICMP                   1
-^
-lwipopts.h:26:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_RAW                    1
-^
-lwipopts.h:27:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_WND                     (8 * TCP_MSS)
-^
-lwipopts.h:28:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_MSS                     1460
-^
-lwipopts.h:29:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_SND_BUF                 (8 * TCP_MSS)
-^
-lwipopts.h:30:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_SND_QUEUELEN            ((4 * (TCP_SND_BUF) + (TCP_MSS - 1)) / (TCP_MSS))
-^
-lwipopts.h:31:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_NETIF_STATUS_CALLBACK  1
-^
-lwipopts.h:32:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_NETIF_LINK_CALLBACK    1
-^
-lwipopts.h:33:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_NETIF_HOSTNAME         1
-^
-lwipopts.h:34:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_NETCONN                0
-^
-lwipopts.h:35:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEM_STATS                   0
-^
-lwipopts.h:36:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define SYS_STATS                   0
-^
-lwipopts.h:37:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEMP_STATS                  0
-^
-lwipopts.h:38:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LINK_STATS                  0
-^
-lwipopts.h:40:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_CHKSUM_ALGORITHM       3
-^
-lwipopts.h:41:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_DHCP                   1
-^
-lwipopts.h:42:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_IPV4                   1
-^
-lwipopts.h:43:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_TCP                    1
-^
-lwipopts.h:44:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_UDP                    1
-^
-lwipopts.h:45:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_DNS                    1
-^
-lwipopts.h:46:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_TCP_KEEPALIVE          1
-^
-lwipopts.h:47:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_NETIF_TX_SINGLE_PBUF   1
-^
-lwipopts.h:48:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define DHCP_DOES_ARP_CHECK         0
-^
-lwipopts.h:49:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_DHCP_DOES_ACD_CHECK    0
-^
-lwipopts.h:52:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_DEBUG                  1
-^
-lwipopts.h:53:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_STATS                  1
-^
-lwipopts.h:54:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_STATS_DISPLAY          1
-^
-lwipopts.h:57:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define ETHARP_DEBUG                LWIP_DBG_OFF
-^
-lwipopts.h:58:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define NETIF_DEBUG                 LWIP_DBG_OFF
-^
-lwipopts.h:59:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define PBUF_DEBUG                  LWIP_DBG_OFF
-^
-lwipopts.h:60:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define API_LIB_DEBUG               LWIP_DBG_OFF
-^
-lwipopts.h:61:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define API_MSG_DEBUG               LWIP_DBG_OFF
-^
-lwipopts.h:62:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define SOCKETS_DEBUG               LWIP_DBG_OFF
-^
-lwipopts.h:63:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define ICMP_DEBUG                  LWIP_DBG_OFF
-^
-lwipopts.h:64:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define INET_DEBUG                  LWIP_DBG_OFF
-^
-lwipopts.h:65:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define IP_DEBUG                    LWIP_DBG_OFF
-^
-lwipopts.h:66:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define IP_REASS_DEBUG              LWIP_DBG_OFF
-^
-lwipopts.h:67:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define RAW_DEBUG                   LWIP_DBG_OFF
-^
-lwipopts.h:68:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEM_DEBUG                   LWIP_DBG_OFF
-^
-lwipopts.h:69:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define MEMP_DEBUG                  LWIP_DBG_OFF
-^
-lwipopts.h:70:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define SYS_DEBUG                   LWIP_DBG_OFF
-^
-lwipopts.h:71:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_DEBUG                   LWIP_DBG_OFF
-^
-lwipopts.h:72:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_INPUT_DEBUG             LWIP_DBG_OFF
-^
-lwipopts.h:73:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_OUTPUT_DEBUG            LWIP_DBG_OFF
-^
-lwipopts.h:74:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_RTO_DEBUG               LWIP_DBG_OFF
-^
-lwipopts.h:75:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_CWND_DEBUG              LWIP_DBG_OFF
-^
-lwipopts.h:76:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_WND_DEBUG               LWIP_DBG_OFF
-^
-lwipopts.h:77:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_FR_DEBUG                LWIP_DBG_OFF
-^
-lwipopts.h:78:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_QLEN_DEBUG              LWIP_DBG_OFF
-^
-lwipopts.h:79:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCP_RST_DEBUG               LWIP_DBG_OFF
-^
-lwipopts.h:80:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define UDP_DEBUG                   LWIP_DBG_OFF
-^
-lwipopts.h:81:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define TCPIP_DEBUG                 LWIP_DBG_OFF
-^
-lwipopts.h:82:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define PPP_DEBUG                   LWIP_DBG_OFF
-^
-lwipopts.h:83:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define SLIP_DEBUG                  LWIP_DBG_OFF
-^
-lwipopts.h:84:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define DHCP_DEBUG                  LWIP_DBG_OFF
-^
-lwipopts.h:88:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_HTTPD 1
-^
-lwipopts.h:89:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_HTTPD_SSI 1
-^
-lwipopts.h:90:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_HTTPD_CGI 1
-^
-lwipopts.h:91:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LWIP_HTTPD_SSI_INCLUDE_TAG 0
-^
-lwipopts.h:92:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define HTTPD_FSDATA_FILE "htmldata.c"
-^
-motor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define motor_h
-^
-servo.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+[1mservo.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
 #define servo_h
 ^
-ssi.h:8:7: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
-u16_t ssi_handler(int iIndex, char *pcInsert, int iInsertLen) {
-      ^
-servo.h:5:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
-void setMillis(int servoPin, float millis);
+[1mssi.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define SSI_H
+^
+[1mcgi.h:11:6: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+void cgi_init(void);
      ^
-motor.h:5:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
-void init_h_bridge(int ACW_PIN, int CW_PIN, int PWM_PIN);
-     ^
-motor.h:4:10: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
-uint32_t motor_move(uint slice_num, uint chan, uint32_t freq, int speed);
-         ^
-cgi.h:121:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
-void cgi_init(void)
-     ^
-servo.h:6:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+[1mservo.h:6:6: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
 void setServo(int servoPin, float startMillis);
      ^

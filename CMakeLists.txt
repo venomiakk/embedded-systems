@@ -24,15 +24,15 @@ execute_process(COMMAND
 
 message("Running cppcheck for misra")
 execute_process(COMMAND
-    cppcheck --addon=misra --output-file=misc/misra-report.txt main.c
+    cppcheck --addon=misra --output-file=misc/misra-report.txt --suppress=*:lwipopts.h main.c
     WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
 )
 
 add_executable(picocar
     main.c
-    #cgi.c
+    cgi.c
     cgi.h
-    #ssi.c
+    ssi.c
     ssi.h
     servo.c
     servo.h

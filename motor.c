@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "hardware/pwm.h"
 #include "hardware/clocks.h"
+#include "motor.h"
 
 uint32_t motor_move(uint slice_num, uint chan, uint32_t freq, int speed)
 {
