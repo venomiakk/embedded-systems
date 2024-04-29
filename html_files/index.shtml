@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head> 
-        <title>PicoW Webserver</title> 
-    </head>
-    <body> <h1>PicoW Webserver Tutorial</h1>
-        <br>
-        <h2>This bit is SSI:</h2>
-        <p>Voltage: <!--#volt--></p>
-        <p>Temp: <!--#temp--> C</p>
-        <p>LED is: <!--#led--></p>
-        <br>
-        <h2>This bit is CGI:</h2>
-        <a href="/led.cgi?led=1"><button>LED ON</button></a>
-        <a href="/led.cgi?led=0"><button>LED OFF</button></a>
-        <p>
-            <a href="/servo.cgi?servo=l"><button>serwo lewo</button></a>
-            <a href="/servo.cgi?servo=s"><button>serwo srodek</button></a>
-            <a href="/servo.cgi?servo=p"><button>serwo prawo</button></a>
-        </p>
-        <br>
-        <p>
-            <a href="/motor.cgi?motor=p"><button>jedz do przodu</button></a>
-            <a href="/motor.cgi?motor=t"><button>jedz do tylu</button></a>
-            <a href="/motor.cgi?motor=s"><button>STop</button></a>
-        </p>
-        <br>
-        <a href="/index.shtml">Refresh</a>
-   </body>
+
+<head>
+    <title>PicoW Webserver</title>
+</head>
+
+<body>
+    <h1>PicoW Webserver Tutorial</h1>
+    <br>
+    <h2>This bit is SSI:</h2>
+    <p>Voltage: <!--#volt--></p>
+    <p>Temp: <!--#temp--> C</p>
+    <p>LED is: <!--#led--></p>
+    <br>
+    <h2>This bit is CGI:</h2>
+    <a href="/led.cgi?led=1"><button>LED ON</button></a>
+    <a href="/led.cgi?led=0"><button>LED OFF</button></a>
+    <p>
+        <a href="/servo.cgi?servo=l"><button>serwo lewo</button></a>
+        <a href="/servo.cgi?servo=s"><button>serwo srodek</button></a>
+        <a href="/servo.cgi?servo=p"><button>serwo prawo</button></a>
+    </p>
+    <br>
+    <p>
+        <a href="/motor.cgi?motor=p"><button>jedz do przodu</button></a>
+        <a href="/motor.cgi?motor=t"><button>jedz do tylu</button></a>
+        <a href="/motor.cgi?motor=s"><button>STop</button></a>
+    </p>
+    <br>
+
+    <p>
+    <h2>z jakiegos powodu na tym sie zawiesza...</h2>
+    <form action="/pwmspeaker.cgi" method="get">
+        <label for="freqhz">Czestotliwosc: </label>
+        <input type="number" id="freqhz" name="freqhz" />
+        <input type="submit" value="Graj">
+    </form>
+    </p>
+    <a href="/index.shtml">Refresh</a>
+</body>
+
 </html>

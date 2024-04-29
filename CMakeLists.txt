@@ -38,6 +38,12 @@ add_executable(picocar
     servo.h
     motor.c
     motor.h
+    irsensor.c
+    irsensor.h
+    lightsensor.c
+    lightsensor.h
+    speaker.c
+    speaker.h
 )
 
 target_include_directories(${PROGRAM_NAME} PRIVATE
@@ -60,7 +66,7 @@ target_link_libraries(picocar
     )
 
 # enable usb output, disable uart output
-pico_enable_stdio_usb(${PROGRAM_NAME} 1)
+pico_enable_stdio_usb(${PROGRAM_NAME} 0)
 pico_enable_stdio_uart(${PROGRAM_NAME} 1)
 
 pico_add_extra_outputs(picocar)

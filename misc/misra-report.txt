@@ -1,45 +1,36 @@
-[1mssi.h:8:14: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.2][0m
-void ssi_init();
-             ^
-[1mmain.c:14:12: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4][0m
-const char WIFI_SSID[] = "WLAN1_home";
-           ^
-[1mmain.c:15:12: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.4][0m
-const char WIFI_PASSWORD[] = "rX16Hba7HvZ";
-           ^
-[1mmain.c:30:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-14.4][0m
-    while (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000))
-          ^
-[1mmain.c:54:5: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.6][0m
-    while (1)
-    ^
-[1mmain.c:32:15: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
-        printf("\nAttempting to connect...");
-              ^
-[1mmain.c:38:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
-    printf("\nConnected to the network.");
-          ^
-[1mmain.c:44:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
-    printf("\nHTTP Server initialised!");
-          ^
-[1mmain.c:47:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
-    printf("\nSSI Handler inistialised!");
-          ^
-[1mmain.c:50:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
-    printf("\nCGI Handler initialised!");
-          ^
-[1mcgi.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+servo.h:4:23: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-10.3]
+static float clockDiv = 64;
+                      ^
+servo.h:5:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-10.3]
+static float wrap = 39062;
+                  ^
+cgi.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define CGI_H
 ^
-[1mservo.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
-#define servo_h
+irsensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define IRSENSOR_H
 ^
-[1mssi.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+lightsensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LIGHTSENSOR_H
+^
+servo.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define SERVO_H
+^
+speaker.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define SPEAKER_H
+^
+ssi.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define SSI_H
 ^
-[1mcgi.h:11:6: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
-void cgi_init(void);
-     ^
-[1mservo.h:6:6: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
-void setServo(int servoPin, float startMillis);
+ssi.h:7:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void ssi_init(void);
+            ^
+cgi.h:13:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void cgi_init(void);
+            ^
+servo.h:8:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void setServo(int servoPin, float startMillis);
+            ^
+speaker.h:8:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+void init_pwm_speaker(void);
      ^

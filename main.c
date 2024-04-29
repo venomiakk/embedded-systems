@@ -6,6 +6,9 @@
 #include "cgi.h"
 #include "servo.h"
 // #include "motor.h"
+#include "irsensor.h"
+#include "lightsensor.h"
+#include "speaker.h"
 
 int main(void)
 {
@@ -41,15 +44,20 @@ int main(void)
         Initialise HTTP server
     */
     httpd_init();
-    (void)printf("\nHTTP Server initialised!");
+    (void)printf("\nHTTP Server initialised!\n");
 
     ssi_init();
-    (void)printf("\nSSI Handler inistialised!");
+    (void)printf("\nSSI Handler inistialised!\n");
 
     cgi_init();
-    (void)printf("\nCGI Handler initialised!");
+    (void)printf("\nCGI Handler initialised!\n");
 
     setServo(15, 1500);
+
+    // binary_detection();
+    // measure_light();
+    init_pwm_speaker();
+    // play_tone(440.0f, 500);
 
     while (true)
     {

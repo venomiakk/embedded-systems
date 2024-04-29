@@ -4,7 +4,10 @@
 #include "servo.h"
 #include "motor.h"
 #include "hardware/pwm.h"
+#include "speaker.h"
+#include <stdlib.h>
 
+// ? te zmienne moga byc w motor.h?
 const int SERVO_PIN = 15;
 int SERVO_POS = 1500;
 const int MOTOR_PWM_PIN = 16;
@@ -105,15 +108,39 @@ const char *cgi_motor_handler(int iIndex, int iNumParams, char *pcParam[], char 
     }
     return "/index.shtml";
 }
+
+extern const char *cgi_pwmspeaker_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+{
+    printf("iIndex: %i, iNumParams: %i, pcParam: %s, pcValue: %s\n", iIndex, iNumParams, pcParam[0], pcValue[0]);
+    if (strcmp(pcParam[0], "freqhz") == 0)
+    {
+        float frequency = atof(pcValue[0]);
+        printf("frequency: %f\n", frequency);
+        /* Error
+         *    *** PANIC ***
+         *    Attempted to sleep inside of an exception handler; use busy_wait if you must
+         *
+         * przez sleep_ms() w play_tone() ale nwm czemu
+         * busy_wait_ms() rozwiazuje problem ale to chyba nie jest najlepsze rozwiazanie xd
+         * bo tam jest jakies przerwanie czy jakis wyjatek i pico jest "niestabilne"
+         * i ten sleep_ms() cos psuje
+         */
+        play_tone(frequency, 500);
+    }
+
+    return "/index.shtml";
+}
+
 // tCGI Struct
 // Fill this with all of the CGI requests and their respective handlers
 static const tCGI cgi_handlers[] = {
     {// Html request for "/led.cgi" triggers cgi_handler
      "/led.cgi", cgi_led_handler},
     {"/servo.cgi", cgi_servo_handler},
-    {"/motor.cgi", cgi_motor_handler}};
+    {"/motor.cgi", cgi_motor_handler},
+    {"/pwmspeaker.cgi", cgi_pwmspeaker_handler}};
 
 void cgi_init(void)
 {
-    http_set_cgi_handlers(cgi_handlers, 3);
+    http_set_cgi_handlers(cgi_handlers, 4);
 }
