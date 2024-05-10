@@ -10,6 +10,8 @@
 // ? te zmienne moga byc w motor.h?
 const int SERVO_PIN = 15;
 int SERVO_POS = 1500;
+int SERVO_R = 2350;
+int SERVO_L = 800;
 const int MOTOR_PWM_PIN = 16;
 const int MOTOR_CW_PIN = 17;
 const int MOTOR_ACW_PIN = 18;
@@ -44,19 +46,19 @@ const char *cgi_servo_handler(int iIndex, int iNumParams, char *pcParam[], char 
     {
         if (strcmp(pcValue[0], "p") == 0)
         {
-            if (SERVO_POS != 600)
+            if (SERVO_POS != SERVO_R)
             {
                 (void)printf("prawo\n");
-                SERVO_POS = 600;
+                SERVO_POS = SERVO_R;
                 setMillis(SERVO_PIN, SERVO_POS);
             }
         }
         else if (strcmp(pcValue[0], "l") == 0)
         {
-            if (SERVO_POS != 2400)
+            if (SERVO_POS != SERVO_L)
             {
                 (void)printf("lewo\n");
-                SERVO_POS = 2400;
+                SERVO_POS = SERVO_L;
                 setMillis(SERVO_PIN, SERVO_POS);
             }
         }
