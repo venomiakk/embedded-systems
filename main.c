@@ -6,9 +6,22 @@
 #include "cgi.h"
 #include "servo.h"
 // #include "motor.h"
-#include "irsensor.h"
 #include "lightsensor.h"
 #include "speaker.h"
+#include "diodes.h"
+
+/*!
+ *  @brief    Krótko co procedura robi.
+ *  @param nazwa  parametru 1 
+ *             opis parametru 1
+ *  @param nazwa  parametru 2
+ *             opis parametru 2
+ *  @param nazwa  parametru n 
+ *             opis parametru n
+ *  @returns  np. tak: true on success, false otherwise
+ *  @side effects:
+ *            efekty uboczne
+ */
 
 int main(void)
 {
@@ -52,14 +65,20 @@ int main(void)
     cgi_init();
     (void)printf("\nCGI Handler initialised!\n");
 
+    /*
+        Initialise components
+    */
     setServo(15, 1500);
-
-    // binary_detection();
-    // measure_light();
+    initialise_light_sensor();
     init_pwm_speaker();
     // play_tone(440.0f, 500);
+    light_red_on();
 
+    uint16_t light_value;
     while (true)
     {
+        light_value = get_light_value();
+        (void)printf("%d\n", light_value);
+        sleep_ms(1000);
     }
 }

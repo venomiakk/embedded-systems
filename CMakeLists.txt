@@ -38,12 +38,12 @@ add_executable(picocar
     servo.h
     motor.c
     motor.h
-    irsensor.c
-    irsensor.h
     lightsensor.c
     lightsensor.h
     speaker.c
     speaker.h
+    diodes.c
+    diodes.h
 )
 
 target_include_directories(${PROGRAM_NAME} PRIVATE

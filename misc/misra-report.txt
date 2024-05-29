@@ -7,9 +7,6 @@ static float wrap = 39062;
 cgi.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define CGI_H
 ^
-irsensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define IRSENSOR_H
-^
 lightsensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define LIGHTSENSOR_H
 ^
@@ -31,6 +28,12 @@ extern void cgi_init(void);
 servo.h:8:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void setServo(int servoPin, float startMillis);
             ^
+lightsensor.h:8:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void initialise_light_sensor(void);
+            ^
 speaker.h:8:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 void init_pwm_speaker(void);
      ^
+lightsensor.h:9:17: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern uint16_t get_light_value(void);
+                ^
