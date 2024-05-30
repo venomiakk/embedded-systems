@@ -9,14 +9,16 @@
 #include "lightsensor.h"
 #include "speaker.h"
 #include "diodes.h"
+#include "distancesensor.h"
+#include "accelerometer.h"
 
 /*!
  *  @brief    Krótko co procedura robi.
- *  @param nazwa  parametru 1 
+ *  @param nazwa  parametru 1
  *             opis parametru 1
  *  @param nazwa  parametru 2
  *             opis parametru 2
- *  @param nazwa  parametru n 
+ *  @param nazwa  parametru n
  *             opis parametru n
  *  @returns  np. tak: true on success, false otherwise
  *  @side effects:
@@ -72,13 +74,38 @@ int main(void)
     initialise_light_sensor();
     init_pwm_speaker();
     // play_tone(440.0f, 500);
-    light_red_on();
+    initialize_diodes();
+
+    initialise_i2c();
+    initialise_adxl345();
+
+    // initialise_distance_sensor();
 
     uint16_t light_value;
+    float x, y, z;
     while (true)
     {
-        light_value = get_light_value();
-        (void)printf("%d\n", light_value);
-        sleep_ms(1000);
+        // light_value = get_light_value();
+        // (void)printf("Swiatlo: %d\n", light_value);
+        // if (light_value >= 3500)
+        // {
+        //     diode_14_mode(1);
+        // }
+        // else
+        // {
+        //     diode_14_mode(0);
+        // }
+
+        // get_distance();
+
+        // sleep_ms(1000);
+        // Odczyt danych z ADXL345
+        adxl345_read_data(&x, &y, &z);
+
+        // Wyświetlanie danych
+        printf("X: %.2f, Y: %.2f, Z: %.2f\n", x, y, z);
+
+        // Opóźnienie 500 ms
+        sleep_ms(500);
     }
 }

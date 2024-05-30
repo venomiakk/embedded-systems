@@ -1,11 +1,16 @@
 #include "diodes.h"
 #include "pico/stdlib.h"
 
-#define LIGHT_RED_PIN 14
+#define DIODE_14 14 // 330Ohm
 
-void light_red_on(void)
+void initialize_diodes(void)
 {
-    gpio_init(LIGHT_RED_PIN);
-    gpio_set_dir(LIGHT_RED_PIN, GPIO_OUT);
-    gpio_put(LIGHT_RED_PIN, 1);
+    gpio_init(DIODE_14);
+    gpio_set_dir(DIODE_14, GPIO_OUT);
+    gpio_put(DIODE_14, 0);
+}
+
+void diode_14_mode(int mode)
+{
+    gpio_put(DIODE_14, mode);
 }

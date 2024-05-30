@@ -3,7 +3,7 @@
 #include "hardware/pwm.h"
 #include <stdio.h>
 
-#define SPEAKER_PIN 13
+#define SPEAKER_PIN 2
 uint16_t PWM_RANGE = 65535;
 
 void init_pwm_speaker(void)

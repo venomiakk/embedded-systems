@@ -20,7 +20,7 @@ void measure_light()
     while (true)
     {
         uint16_t light_value = adc_read();
-        (void)printf("%d\n", light_value);
+        (void)printf("Swiatlo: %d\n", light_value);
         sleep_ms(1000);
     }
 }

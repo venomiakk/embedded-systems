@@ -44,6 +44,10 @@ add_executable(picocar
     speaker.h
     diodes.c
     diodes.h
+    distancesensor.c
+    distancesensor.h
+    accelerometer.c
+    accelerometer.h
 )
 
 target_include_directories(${PROGRAM_NAME} PRIVATE

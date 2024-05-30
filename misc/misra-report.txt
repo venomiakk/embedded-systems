@@ -4,8 +4,71 @@ static float clockDiv = 64;
 servo.h:5:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-10.3]
 static float wrap = 39062;
                   ^
+main.c:85:12: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-12.3]
+    float x, y, z;
+           ^
+main.c:106:15: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+        printf("X: %.2f, Y: %.2f, Z: %.2f\n", x, y, z);
+              ^
+accelerometer.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ACCELEROMETER_H
+^
+accelerometer.h:7:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define I2C_PORT i2c0
+^
+accelerometer.h:8:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define SDA_PIN 4
+^
+accelerometer.h:9:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define SCL_PIN 5
+^
+accelerometer.h:10:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ADXL345_ADDR 0x53
+^
+accelerometer.h:13:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ADXL345_REG_DEVID 0x00
+^
+accelerometer.h:14:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ADXL345_REG_POWER_CTL 0x2D
+^
+accelerometer.h:15:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ADXL345_REG_DATA_FORMAT 0x31
+^
+accelerometer.h:16:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ADXL345_REG_DATAX0 0x32
+^
+accelerometer.h:19:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ADXL345_REG_OFSX 0x1E
+^
+accelerometer.h:20:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ADXL345_REG_OFSY 0x1F
+^
+accelerometer.h:21:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ADXL345_REG_OFSZ 0x20
+^
+accelerometer.h:22:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define X_OFFSET 4
+^
+accelerometer.h:23:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define Y_OFFSET -3
+^
+accelerometer.h:24:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define Z_OFFSET 33
+^
 cgi.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define CGI_H
+^
+diodes.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define DIODES_H
+^
+distancesensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define DISTANCESENSOR_H
+^
+distancesensor.h:7:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define ECHO 12
+^
+distancesensor.h:8:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define TRIG 13
 ^
 lightsensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define LIGHTSENSOR_H
@@ -34,6 +97,15 @@ extern void initialise_light_sensor(void);
 speaker.h:8:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 void init_pwm_speaker(void);
      ^
-lightsensor.h:9:17: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
-extern uint16_t get_light_value(void);
-                ^
+diodes.h:7:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void initialize_diodes(void);
+            ^
+accelerometer.h:26:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void initialise_i2c(void);
+            ^
+accelerometer.h:27:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void initialise_adxl345(void);
+            ^
+accelerometer.h:30:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void adxl345_read_data(float *x, float *y, float *z);
+            ^
