@@ -1,0 +1,24 @@
+[../ssi.h:8] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../cgi.h:13] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../lightsensor.h:7] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../lightsensor.h:8] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../lightsensor.h:9] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../speaker.h:8] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../diodes.h:5] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../distancesensor.h:9] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../distancesensor.h:10] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../accelerometer.h:26] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../accelerometer.h:27] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../accelerometer.h:31] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../main.c:28] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../lwipopts.h:12] (style) All identifiers used in the controlling expression of #if or #elif preprocessing directives shall be #define’d before evaluation (Required) [misra-c2012-20.9]
+Checking dumps/main.c.dump...
+Checking dumps/main.c.dump, config ...
+Checking dumps/main.c.dump, config PICO_CYW43_ARCH_POLL...
+
+MISRA rules violations found:
+	Required: 14
+
+MISRA rules violated:
+	misra-c2012-8.2 (-): 13
+	misra-c2012-20.9 (-): 1

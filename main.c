@@ -45,9 +45,11 @@ int main(void)
         Attempting to connect to the WiFI
     */
     //! while (cyw43_arch_wifi_connect_timeout_ms(wifiSSID, wifiPASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000))
-    while (true == cyw43_arch_wifi_connect_timeout_ms(wifiSSID, wifiPASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000))
+    bool connection_status = cyw43_arch_wifi_connect_timeout_ms(wifiSSID, wifiPASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000);
+    while (true == connection_status)
     {
         (void)printf("\nAttempting to connect...");
+        connection_status = cyw43_arch_wifi_connect_timeout_ms(wifiSSID, wifiPASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000);
     }
 
     /*
@@ -80,12 +82,15 @@ int main(void)
     init_adxl345();
 
     uint16_t light_value;
-    float x, y, z;
+    uint16_t light_trigger = 3500;
+    float x;
+    float y;
+    float z;
     while (true)
     {
         light_value = get_light_value();
         (void)printf("Swiatlo: %d\n", light_value);
-        if (light_value >= 3500)
+        if (light_trigger <= light_value)
         {
             diode_14_mode(1);
         }
@@ -96,4 +101,6 @@ int main(void)
 
         sleep_ms(1000);
     }
+
+    return 0;
 }
