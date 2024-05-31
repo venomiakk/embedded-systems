@@ -7,7 +7,7 @@ static float wrap = 39062;
 main.c:85:12: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-12.3]
     float x, y, z;
            ^
-main.c:106:15: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+main.c:107:15: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
         printf("X: %.2f, Y: %.2f, Z: %.2f\n", x, y, z);
               ^
 accelerometer.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
@@ -47,13 +47,13 @@ accelerometer.h:21:0: style: misra violation (use --rule-texts=<file> to get pro
 #define ADXL345_REG_OFSZ 0x20
 ^
 accelerometer.h:22:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define X_OFFSET 4
+#define X_OFFSET 1
 ^
 accelerometer.h:23:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define Y_OFFSET -3
+#define Y_OFFSET -1
 ^
 accelerometer.h:24:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define Z_OFFSET 33
+#define Z_OFFSET 8
 ^
 cgi.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define CGI_H

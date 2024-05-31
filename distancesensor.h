@@ -2,12 +2,11 @@
 #define DISTANCESENSOR_H
 
 #include <stdint.h>
-//GPIO 12 - ECHO
-//GPIO 13 - TRIG
-#define ECHO 12
-#define TRIG 13
+
+#define ECHO 21
+#define TRIG 20
 
 extern void initialise_distance_sensor(void);
 extern float get_distance(void);
 
-#endif //DISTANCESENSOR_H
+#endif // DISTANCESENSOR_H

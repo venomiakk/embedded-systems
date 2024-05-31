@@ -14,7 +14,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 pico_sdk_init()
 
-# Wykonywanie raz dziala a raz nie
 
 message("Running makefsdata python script")
 execute_process(COMMAND

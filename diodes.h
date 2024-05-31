@@ -1,9 +1,7 @@
 #ifndef DIODES_H
 #define DIODES_H
 
-
-
 extern void diode_14_mode(int mode);
-extern void initialize_diodes(void);
+extern void initi_diodes(void);
 
-#endif //DIODES_H
+#endif // DIODES_H

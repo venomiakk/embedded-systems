@@ -2,16 +2,19 @@
 <html>
 
 <head>
-    <title>PicoW Webserver</title>
+    <title>PicoW Car Project</title>
 </head>
 
 <body>
-    <h1>PicoW Webserver Tutorial</h1>
+    <h1>PicoW Car Webserver</h1>
     <br>
     <h2>This bit is SSI:</h2>
-    <p>Voltage: <!--#volt--></p>
-    <p>Temp: <!--#temp--> C</p>
     <p>LED is: <!--#led--></p>
+    <p>Acceleration:</p>
+    <p> X: <!--#accx--></p>
+    <p> Y: <!--#accy--></p>
+    <p> Z: <!--#accz--></p>
+    <p>Light: <!--#light--></p>
     <br>
     <h2>This bit is CGI:</h2>
     <a href="/led.cgi?led=1"><button>LED ON</button></a>

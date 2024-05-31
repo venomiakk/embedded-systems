@@ -15,16 +15,16 @@
 #define ADXL345_REG_DATA_FORMAT 0x31
 #define ADXL345_REG_DATAX0 0x32
 
-// Rejestry do kalibracji
+// Rejestry i dane do kalibracji
 #define ADXL345_REG_OFSX 0x1E
 #define ADXL345_REG_OFSY 0x1F
 #define ADXL345_REG_OFSZ 0x20
-#define X_OFFSET 4
-#define Y_OFFSET -3
-#define Z_OFFSET 33
+#define X_OFFSET -1
+#define Y_OFFSET 1
+#define Z_OFFSET -8
 
-extern void initialise_i2c(void);
-extern void initialise_adxl345(void);
+extern void init_i2c0(void);
+extern void init_adxl345(void);
 static void i2c_write_reg(uint8_t reg, uint8_t value);
 static void i2c_read_reg(uint8_t reg, uint8_t *buf, uint8_t len);
 extern void adxl345_read_data(float *x, float *y, float *z);

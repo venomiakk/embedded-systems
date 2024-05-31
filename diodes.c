@@ -3,7 +3,7 @@
 
 #define DIODE_14 14 // 330Ohm
 
-void initialize_diodes(void)
+void initi_diodes(void)
 {
     gpio_init(DIODE_14);
     gpio_set_dir(DIODE_14, GPIO_OUT);

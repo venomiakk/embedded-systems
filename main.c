@@ -71,41 +71,29 @@ int main(void)
         Initialise components
     */
     setServo(15, 1500);
-    initialise_light_sensor();
+    init_light_sensor();
     init_pwm_speaker();
-    // play_tone(440.0f, 500);
-    initialize_diodes();
+    initi_diodes();
 
-    initialise_i2c();
-    initialise_adxl345();
-
-    // initialise_distance_sensor();
+    // Akcelerometr
+    init_i2c0();
+    init_adxl345();
 
     uint16_t light_value;
     float x, y, z;
     while (true)
     {
-        // light_value = get_light_value();
-        // (void)printf("Swiatlo: %d\n", light_value);
-        // if (light_value >= 3500)
-        // {
-        //     diode_14_mode(1);
-        // }
-        // else
-        // {
-        //     diode_14_mode(0);
-        // }
+        light_value = get_light_value();
+        (void)printf("Swiatlo: %d\n", light_value);
+        if (light_value >= 3500)
+        {
+            diode_14_mode(1);
+        }
+        else
+        {
+            diode_14_mode(0);
+        }
 
-        // get_distance();
-
-        // sleep_ms(1000);
-        // Odczyt danych z ADXL345
-        adxl345_read_data(&x, &y, &z);
-
-        // Wyświetlanie danych
-        printf("X: %.2f, Y: %.2f, Z: %.2f\n", x, y, z);
-
-        // Opóźnienie 500 ms
-        sleep_ms(500);
+        sleep_ms(1000);
     }
 }

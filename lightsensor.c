@@ -25,7 +25,7 @@ void measure_light()
     }
 }
 
-void initialise_light_sensor(void)
+void init_light_sensor(void)
 {
     adc_init();
     adc_gpio_init(LIGHT_SENSOR_PIN);
