@@ -3,10 +3,12 @@
 
 #include "pico/stdlib.h"
 
-//GPIO_PIN_13
+extern void init_pwm_speaker(void);
 
-void init_pwm_speaker(void);
+extern void play_tone(float frequency, uint32_t duration_ms);
 
-void play_tone(float frequency, uint32_t duration_ms);
+extern void dst_warning(void);
+
+extern void play_melody(void);
 
 #endif

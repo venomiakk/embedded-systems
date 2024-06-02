@@ -23,7 +23,7 @@ execute_process(COMMAND
 
 message("Running cppcheck for misra")
 execute_process(COMMAND
-    cppcheck --addon=misra --output-file=misc/misra-report.txt --suppress=*:lwipopts.h main.c
+    cppcheck --addon=misra --output-file=misc/misra-report2.txt --suppress=*:lwipopts.h main.c
     WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
 )
 
@@ -47,6 +47,8 @@ add_executable(picocar
     distancesensor.h
     accelerometer.c
     accelerometer.h
+    lcd.c
+    lcd.h
 )
 
 target_include_directories(${PROGRAM_NAME} PRIVATE

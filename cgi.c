@@ -10,14 +10,15 @@
 // ? te zmienne moga byc w motor.h?
 const int SERVO_PIN = 15;
 int SERVO_POS = 1500;
-int SERVO_R = 1800;
-int SERVO_L = 1200;
+int SERVO_R = 1750;
+int SERVO_L = 1250;
+
 const int MOTOR_PWM_PIN = 16;
 const int MOTOR_CW_PIN = 17;
 const int MOTOR_ACW_PIN = 18;
 
-const int MOTOR_FREQ = 5000;
-const int MOTOR_SPEED = 200;
+const int MOTOR_FREQ = 8500;
+const int MOTOR_SPEED = 80;
 
 // CGI handler which is run when a request for /led.cgi is detected
 const char *cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])

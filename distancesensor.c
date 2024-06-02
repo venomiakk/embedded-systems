@@ -2,7 +2,7 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
-void initialise_distance_sensor(void)
+void init_distance_sensor(void)
 {
     gpio_init(ECHO);
     gpio_set_dir(ECHO, GPIO_IN);
@@ -19,13 +19,11 @@ float get_distance(void)
     sleep_us(10);
     gpio_put(TRIG, 0);
 
-    const int timeout = 1000000;
+    const int timeout = 1000;
     int iter = 0;
 
     while (gpio_get(ECHO) == 0) // Czekaj na początek wysokiego impulsu
     {
-        int state = gpio_get(ECHO);
-        printf("State: %d\n", state);
         iter++;
         if (iter >= timeout)
         {
@@ -37,8 +35,6 @@ float get_distance(void)
     iter = 0;
     while (gpio_get(ECHO) == 1) // Czekaj na koniec wysokiego impulsu
     {
-        int state = gpio_get(ECHO);
-        printf("State: %d\n", state);
         iter++;
         if (iter >= timeout)
         {
@@ -51,6 +47,6 @@ float get_distance(void)
 
     // Konwersja na sekundy i obliczenie odległości (prędkość dźwięku to około 343 metrów na sekundę)
     float distance = (float)duration / 1000000.0f * 343.0f / 2.0f;
-    (void)printf("Odleglosc: %f\n", distance);
+    // (void)printf("Odleglosc: %f\n", distance);
     return distance;
 }

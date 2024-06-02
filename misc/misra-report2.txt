@@ -1,102 +1,148 @@
-[1m../accelerometer.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ACCELEROMETER_H
 ^
-[1m../accelerometer.h:7:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:7:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define I2C_PORT i2c0
 ^
-[1m../accelerometer.h:8:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:8:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define SDA_PIN 4
 ^
-[1m../accelerometer.h:9:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:9:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define SCL_PIN 5
 ^
-[1m../accelerometer.h:10:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:10:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ADXL345_ADDR 0x53
 ^
-[1m../accelerometer.h:13:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:13:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ADXL345_REG_DEVID 0x00
 ^
-[1m../accelerometer.h:14:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:14:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ADXL345_REG_POWER_CTL 0x2D
 ^
-[1m../accelerometer.h:15:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:15:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ADXL345_REG_DATA_FORMAT 0x31
 ^
-[1m../accelerometer.h:16:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:16:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ADXL345_REG_DATAX0 0x32
 ^
-[1m../accelerometer.h:19:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:19:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ADXL345_REG_OFSX 0x1E
 ^
-[1m../accelerometer.h:20:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:20:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ADXL345_REG_OFSY 0x1F
 ^
-[1m../accelerometer.h:21:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:21:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ADXL345_REG_OFSZ 0x20
 ^
-[1m../accelerometer.h:22:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:22:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define X_OFFSET -1
 ^
-[1m../accelerometer.h:23:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:23:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define Y_OFFSET 1
 ^
-[1m../accelerometer.h:24:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../accelerometer.h:24:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define Z_OFFSET -8
 ^
-[1m../cgi.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../cgi.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define CGI_H
 ^
-[1m../diodes.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../diodes.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define DIODES_H
 ^
-[1m../distancesensor.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../distancesensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define DISTANCESENSOR_H
 ^
-[1m../distancesensor.h:6:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../distancesensor.h:6:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ECHO 21
 ^
-[1m../distancesensor.h:7:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../distancesensor.h:7:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define TRIG 20
 ^
-[1m../lightsensor.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../lcd.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_H
+^
+../lcd.h:4:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define SPI_PORT spi1
+^
+../lcd.h:6:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_RST_PIN  12
+^
+../lcd.h:7:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_DC_PIN   8
+^
+../lcd.h:8:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_BL_PIN   13
+^
+../lcd.h:10:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_CS_PIN   9
+^
+../lcd.h:11:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_CLK_PIN  10
+^
+../lcd.h:12:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_MOSI_PIN 11
+^
+../lcd.h:14:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_SCL_PIN  7
+^
+../lcd.h:15:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_SDA_PIN  6
+^
+../lightsensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define LIGHTSENSOR_H
 ^
-[1m../servo.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../servo.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define SERVO_H
 ^
-[1m../speaker.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../speaker.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define SPEAKER_H
 ^
-[1m../ssi.h:2:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+../ssi.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define SSI_H
 ^
-[1m../ssi.h:8:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+../ssi.h:8:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void ssi_init(void);
             ^
-[1m../cgi.h:13:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+../cgi.h:13:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void cgi_init(void);
             ^
-[1m../servo.h:8:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+../servo.h:8:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void setServo(int servoPin, float startMillis);
             ^
-[1m../lightsensor.h:8:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
-extern void init_light_sensor(void);
-            ^
-[1m../speaker.h:8:6: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
-void init_pwm_speaker(void);
-     ^
-[1m../diodes.h:5:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
-extern void initi_diodes(void);
-            ^
-[1m../accelerometer.h:26:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+../accelerometer.h:26:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void init_i2c0(void);
             ^
-[1m../accelerometer.h:27:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+../accelerometer.h:27:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void init_adxl345(void);
             ^
-[1m../lightsensor.h:9:17: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+../distancesensor.h:9:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void init_distance_sensor(void);
+            ^
+../speaker.h:6:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void init_pwm_speaker(void);
+            ^
+../lightsensor.h:8:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void init_light_sensor(void);
+            ^
+../diodes.h:6:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void init_pwm_led(void);
+            ^
+../speaker.h:12:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void play_melody(void);
+            ^
+../lightsensor.h:9:17: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern uint16_t get_light_value(void);
                 ^
-[1m../diodes.h:4:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
-extern void diode_14_mode(int mode);
+../diodes.h:7:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void set_pwm_led(uint16_t value);
             ^
+../distancesensor.h:10:14: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern float get_distance(void);
+             ^
+../speaker.h:10:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void dst_warning(void);
+            ^
+
+Summary of MISRA violations:
+     34 misra-c2012-2.5
+     14 misra-c2012-8.7

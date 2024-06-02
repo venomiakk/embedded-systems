@@ -6,7 +6,7 @@
 #define ECHO 21
 #define TRIG 20
 
-extern void initialise_distance_sensor(void);
+extern void init_distance_sensor(void);
 extern float get_distance(void);
 
 #endif // DISTANCESENSOR_H

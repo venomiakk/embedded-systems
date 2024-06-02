@@ -11,6 +11,7 @@
 #include "diodes.h"
 #include "distancesensor.h"
 #include "accelerometer.h"
+#include "lcd.h"
 
 /*!
  *  @brief    Krótko co procedura robi.
@@ -73,33 +74,56 @@ int main(void)
         Initialise components
     */
     setServo(15, 1500);
-    init_light_sensor();
-    init_pwm_speaker();
-    initi_diodes();
 
     // Akcelerometr
     init_i2c0();
     init_adxl345();
+
+    init_distance_sensor();
+    init_pwm_speaker();
+
+    init_light_sensor();
+
+    // initi_diodes();
+    init_pwm_led();
+
+    play_melody();
 
     uint16_t light_value;
     uint16_t light_trigger = 3500;
     float x;
     float y;
     float z;
+    float distance;
+    uint16_t fill = 0;
     while (true)
     {
+        // Kontrolowanie swiatla
         light_value = get_light_value();
         (void)printf("Swiatlo: %d\n", light_value);
         if (light_trigger <= light_value)
         {
-            diode_14_mode(1);
+            fill = light_value - light_trigger;
+            set_pwm_led(fill);
         }
         else
         {
-            diode_14_mode(0);
+            set_pwm_led(0);
         }
 
-        sleep_ms(1000);
+        sleep_ms(500);
+
+        // Kontrolowanie glosnika
+        distance = get_distance();
+        if (distance < 0.15)
+        {
+            dst_warning();
+            (void)printf("Distance: %f\n", distance);
+        }
+
+        sleep_ms(500);
+
+        // Kontrolowanie predkosci pojazdu (przyspieszenie)
     }
 
     return 0;
