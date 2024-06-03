@@ -3,6 +3,12 @@
 
 <head>
     <title>PicoW Car Project</title>
+    <style>
+        body {
+            background-color: #2f2f35; /* Ciemne tło */
+            color: #f0eaea; /* Biała czcionka */
+        }
+    </style>
 </head>
 
 <body>

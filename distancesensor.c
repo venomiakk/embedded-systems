@@ -15,12 +15,13 @@ void init_distance_sensor(void)
 
 float get_distance(void)
 {
+
+    const int timeout = 100000;
+    int iter = 0;
+
     gpio_put(TRIG, 1);
     sleep_us(10);
     gpio_put(TRIG, 0);
-
-    const int timeout = 1000;
-    int iter = 0;
 
     while (gpio_get(ECHO) == 0) // Czekaj na początek wysokiego impulsu
     {
@@ -32,11 +33,11 @@ float get_distance(void)
     }
     uint64_t start_time = time_us_64();
 
-    iter = 0;
+    int iter2 = 0;
     while (gpio_get(ECHO) == 1) // Czekaj na koniec wysokiego impulsu
     {
-        iter++;
-        if (iter >= timeout)
+        iter2++;
+        if (iter2 >= timeout)
         {
             return -1.0f;
         }

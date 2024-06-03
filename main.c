@@ -5,7 +5,7 @@
 #include "ssi.h"
 #include "cgi.h"
 #include "servo.h"
-// #include "motor.h"
+#include "motor.h"
 #include "lightsensor.h"
 #include "speaker.h"
 #include "diodes.h"
@@ -75,17 +75,22 @@ int main(void)
     */
     setServo(15, 1500);
 
+    init_h_bridge(MOTOR_ACW_PIN, MOTOR_CW_PIN, MOTOR_PWM_PIN);
+
     // Akcelerometr
     init_i2c0();
     init_adxl345();
-
-    init_distance_sensor();
-    init_pwm_speaker();
 
     init_light_sensor();
 
     // initi_diodes();
     init_pwm_led();
+
+    init_distance_sensor();
+    init_pwm_speaker();
+
+    lcd_init();
+    lcd_draw_text(10, 10, "Hello, World!", 0xFFFF, 0x0000);
 
     play_melody();
 
@@ -115,7 +120,8 @@ int main(void)
 
         // Kontrolowanie glosnika
         distance = get_distance();
-        if (distance < 0.15)
+        (void)printf("Distance: %f\n", distance);
+        if (distance < 0.15 && distance > 0)
         {
             dst_warning();
             (void)printf("Distance: %f\n", distance);

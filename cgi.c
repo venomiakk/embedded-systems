@@ -7,18 +7,14 @@
 #include "speaker.h"
 #include <stdlib.h>
 
-// ? te zmienne moga byc w motor.h?
-const int SERVO_PIN = 15;
+
+const int MOTOR_FREQ = 8500;
+const int MOTOR_SPEED = 80;
+
 int SERVO_POS = 1500;
 int SERVO_R = 1750;
 int SERVO_L = 1250;
 
-const int MOTOR_PWM_PIN = 16;
-const int MOTOR_CW_PIN = 17;
-const int MOTOR_ACW_PIN = 18;
-
-const int MOTOR_FREQ = 8500;
-const int MOTOR_SPEED = 80;
 
 // CGI handler which is run when a request for /led.cgi is detected
 const char *cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
@@ -84,7 +80,7 @@ const char *cgi_motor_handler(int iIndex, int iNumParams, char *pcParam[], char 
 
     if (strcmp(pcParam[0], "motor") == 0)
     {
-        init_h_bridge(MOTOR_ACW_PIN, MOTOR_CW_PIN, MOTOR_PWM_PIN);
+        
         uint slice = pwm_gpio_to_slice_num(MOTOR_PWM_PIN);
         uint chan = pwm_gpio_to_channel(MOTOR_PWM_PIN);
         if (strcmp(pcValue[0], "p") == 0)
