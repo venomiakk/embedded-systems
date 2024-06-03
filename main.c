@@ -83,15 +83,16 @@ int main(void)
 
     init_light_sensor();
 
-    // initi_diodes();
+    init_diode22();
     init_pwm_led();
 
     init_distance_sensor();
     init_pwm_speaker();
 
-    lcd_init();
-    lcd_clear(WHITE);
-    lcd_draw_text(10, 10, "Hello, World!", WHITE, BLACK);
+    // lcd_init();
+    // lcd_clear(BLACK);
+    // lcd_init();
+    // lcd_draw_text(10, 10, "Hello, World!", WHITE, BLACK);
 
     play_melody();
 
@@ -117,20 +118,39 @@ int main(void)
             set_pwm_led(0);
         }
 
-        sleep_ms(500);
+        sleep_ms(200);
 
         // Kontrolowanie glosnika
         distance = get_distance();
         (void)printf("Distance: %f\n", distance);
-        if (distance < 0.15 && distance > 0)
+        if (distance < 0.20f && distance >= 0.10f)
         {
-            dst_warning();
+            dst_warning1();
             (void)printf("Distance: %f\n", distance);
         }
+        else if (distance < 0.10f && distance >= 0.0f)
+        {
+            dst_warning2();
+            (void)printf("Distance: %f\n", distance);
+        }
+        else
+        {
+        }
 
-        sleep_ms(500);
+        sleep_ms(200);
 
-        // Kontrolowanie predkosci pojazdu (przyspieszenie)
+        // Kontrolowanie przechylenia
+        adxl345_read_data(&x, &y, &z);
+        (void)printf("X: %f, Y: %f, Z: %f\n", x, y, z);
+        if (x > 0.5 || x < -0.5 || y > 0.5 || y < -0.5)
+        {
+            diode_22_mode(1);
+        }
+        else
+        {
+            diode_22_mode(0);
+        }
+        sleep_ms(200);
     }
 
     return 0;

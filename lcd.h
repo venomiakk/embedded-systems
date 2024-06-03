@@ -18,9 +18,12 @@
 #define LCD_DATA 1
 
 #define LCD_WIDTH 128
-#define LCD_HEIGHT 160
+#define LCD_HEIGHT 240
 #define BLACK 0x0000
 #define WHITE 0xFFFF
+#define RED 0xF000
+#define GREEN
+#define BLUE
 
 static const uint8_t font[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, // 32 (space)

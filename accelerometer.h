@@ -28,6 +28,11 @@ extern void init_adxl345(void);
 static void i2c_write_reg(uint8_t reg, uint8_t value);
 static void i2c_read_reg(uint8_t reg, uint8_t *buf, uint8_t len);
 extern void adxl345_read_data(float *x, float *y, float *z);
+
+/**
+ * @brief   Kalibracja akcelerometru
+ * @side effects:
+ */
 static void adxl345_calibrate(void);
 
 #endif // ACCELEROMETER_H

@@ -14,7 +14,7 @@
 <body>
     <h1>PicoW Car Webserver</h1>
     <br>
-    <h2>This bit is SSI:</h2>
+    <h2>SSI:</h2>
     <p>LED is: <!--#led--></p>
     <p>Acceleration:</p>
     <p> X: <!--#accx--></p>
@@ -22,7 +22,7 @@
     <p> Z: <!--#accz--></p>
     <p>Light: <!--#light--></p>
     <br>
-    <h2>This bit is CGI:</h2>
+    <h2>CGI:</h2>
     <a href="/led.cgi?led=1"><button>LED ON</button></a>
     <a href="/led.cgi?led=0"><button>LED OFF</button></a>
     <p>
@@ -39,10 +39,10 @@
     <br>
 
     <p>
-    <h2>z jakiegos powodu na tym sie zawiesza...</h2>
+    <h2>Sygnal dzwiekowy</h2>
     <form action="/pwmspeaker.cgi" method="get">
         <label for="freqhz">Czestotliwosc: </label>
-        <input type="number" id="freqhz" name="freqhz" />
+        <input type="number" id="freqhz" name="freqhz" value="500"/>
         <input type="submit" value="Graj">
     </form>
     </p>

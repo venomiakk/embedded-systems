@@ -1,27 +1,36 @@
 [../ssi.h:8] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
 [../cgi.h:13] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../lightsensor.h:7] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../lightsensor.h:8] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../lightsensor.h:9] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../speaker.h:7] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../speaker.h:11] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../speaker.h:13] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../diodes.h:6] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../diodes.h:9] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../distancesensor.h:9] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../distancesensor.h:10] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../lightsensor.h:12] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../lightsensor.h:18] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../speaker.h:105] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../speaker.h:109] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../speaker.h:110] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../speaker.h:112] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../diodes.h:14] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../diodes.h:35] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../distancesensor.h:12] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../distancesensor.h:18] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
 [../accelerometer.h:26] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
 [../accelerometer.h:27] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
-[../accelerometer.h:31] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../accelerometer.h:36] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../lcd.h:128] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../lcd.h:129] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
 [../main.c:29] (style) Function types shall be in prototype form with named parameters (Required) [misra-c2012-8.2]
+[../main.c:126] (style) The precedence of operators within expressions should be made explicit (Advisory) [misra-c2012-12.1]
+[../main.c:131] (style) The precedence of operators within expressions should be made explicit (Advisory) [misra-c2012-12.1]
+[../main.c:145] (style) The precedence of operators within expressions should be made explicit (Advisory) [misra-c2012-12.1]
+[../main.c:145] (style) The precedence of operators within expressions should be made explicit (Advisory) [misra-c2012-12.1]
+[../main.c:145] (style) The precedence of operators within expressions should be made explicit (Advisory) [misra-c2012-12.1]
 [../lwipopts.h:12] (style) All identifiers used in the controlling expression of #if or #elif preprocessing directives shall be #define’d before evaluation (Required) [misra-c2012-20.9]
 Checking dumps/main.c.dump...
 Checking dumps/main.c.dump, config ...
 Checking dumps/main.c.dump, config PICO_CYW43_ARCH_POLL...
 
 MISRA rules violations found:
-	Required: 17
+	Required: 19
+	Advisory: 5
 
 MISRA rules violated:
-	misra-c2012-8.2 (-): 16
+	misra-c2012-8.2 (-): 18
+	misra-c2012-12.1 (-): 5
 	misra-c2012-20.9 (-): 1

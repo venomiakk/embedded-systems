@@ -2,9 +2,7 @@
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 #include <stdio.h>
-
-#define SPEAKER_PIN 2
-uint16_t PWM_RANGE = 65535;
+#include "hardware/timer.h"
 
 #define NOTE_B0 31
 #define NOTE_C1 33
@@ -97,11 +95,7 @@ uint16_t PWM_RANGE = 65535;
 #define NOTE_DS8 4978
 #define REST 0
 
-int melody[] = {
-    NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4};
-
-int noteDurations[] = {
-    4, 8, 8, 4, 4, 4, 4, 4};
+const uint16_t PWM_RANGE = 65535;
 
 void init_pwm_speaker(void)
 {
@@ -111,11 +105,11 @@ void init_pwm_speaker(void)
     // channel: A-B [0-1]
     uint channel_num = pwm_gpio_to_channel(SPEAKER_PIN);
 
-    pwm_set_enabled(slice_num, true);
+    // pwm_set_enabled(slice_num, true);
     pwm_set_wrap(slice_num, PWM_RANGE);
 }
 
-void play_tone(float frequency, uint32_t duration_ms)
+void play_tone(float frequency)
 {
     (void)printf("playing %f Hz\n", frequency);
     uint slice_num = pwm_gpio_to_slice_num(SPEAKER_PIN);
@@ -129,21 +123,45 @@ void play_tone(float frequency, uint32_t duration_ms)
     pwm_set_wrap(slice_num, period_us);
     // Ustaw poziom sygnału PWM
     pwm_set_chan_level(slice_num, channel_num, period_us / 2);
-    // Poczekaj przez czas trwania tonu
-    // sleep_ms(duration_ms);
-    // ! tego nie powinno sie chyba uzywac
-    busy_wait_ms(duration_ms);
-    // Wyłącz sygnał PWM
-    pwm_set_chan_level(slice_num, channel_num, 0);
+    pwm_set_enabled(slice_num, true);
 }
 
-void dst_warning()
+void play_tone_timer(float frequency, uint32_t duration_ms)
 {
-    play_tone(NOTE_C4, 100);
-    busy_wait_ms(100);
-    play_tone(NOTE_C4, 100);
-    busy_wait_ms(100);
-    play_tone(NOTE_C4, 100);
+    uint slice_num = pwm_gpio_to_slice_num(SPEAKER_PIN);
+    play_tone(frequency);
+    repeating_timer_t timer;
+    add_repeating_timer_ms(-duration_ms, timer_callback, &slice_num, &timer);
+    sleep_ms(duration_ms + 30);
+}
+
+void disable_pwm(uint slice_num)
+{
+    pwm_set_enabled(slice_num, false);
+}
+
+bool timer_callback(repeating_timer_t *rt)
+{
+    disable_pwm(*(uint *)rt->user_data);
+    return false;
+}
+
+void dst_warning1(void)
+{
+    play_tone_timer(NOTE_C4, 100);
+    sleep_ms(100);
+    play_tone_timer(NOTE_E4, 100);
+    sleep_ms(100);
+    play_tone_timer(NOTE_C4, 100);
+}
+
+void dst_warning2(void)
+{
+    play_tone_timer(NOTE_C6, 50);
+    play_tone_timer(NOTE_E6, 50);
+    sleep_ms(100);
+    play_tone_timer(NOTE_C6, 50);
+    play_tone_timer(NOTE_E5, 50);
 }
 
 void play_melody()
@@ -151,8 +169,6 @@ void play_melody()
     for (int i = 0; i < 8; i++)
     {
         int noteDuration = 1000 / noteDurations[i];
-        play_tone(melody[i], noteDuration);
-        // krótka pauza po każdej nucie
-        busy_wait_ms(100);
+        play_tone_timer(melody[i], noteDuration);
     }
 }

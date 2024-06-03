@@ -94,7 +94,7 @@ void lcd_draw_text(uint8_t x, uint8_t y, const char* text, uint16_t color, uint1
 }
 
 void lcd_clear(uint16_t color) {
-    lcd_set_address_window(0, 0, LCD_WIDTH, LCD_HEIGHT-20);
+    lcd_set_address_window(0, 0, LCD_WIDTH, LCD_HEIGHT);
 
     for (int i = 0; i < LCD_WIDTH * LCD_HEIGHT; i++) {
         lcd_send(color >> 8, LCD_DATA);

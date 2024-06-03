@@ -127,7 +127,7 @@ extern const char *cgi_pwmspeaker_handler(int iIndex, int iNumParams, char *pcPa
          * bo tam jest jakies przerwanie czy jakis wyjatek i pico jest "niestabilne"
          * i ten sleep_ms() cos psuje
          */
-        play_tone(frequency, 500);
+        play_tone_timer(frequency, 500);
     }
 
     return "/index.shtml";

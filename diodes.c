@@ -2,8 +2,8 @@
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 
-#define DIODE_7 7 // 330 Ohm
-uint16_t wrap = 500;
+
+static const uint16_t wrap = 500;
 
 void init_pwm_led(void)
 {
@@ -25,14 +25,14 @@ void set_pwm_led(uint16_t value)
     pwm_set_chan_level(slice_num, chan, value);
 }
 
-void initi_diodes(void)
+void init_diode22(void)
 {
-    gpio_init(DIODE_7);
-    gpio_set_dir(DIODE_7, GPIO_OUT);
-    gpio_put(DIODE_7, 0);
+    gpio_init(DIODE_22);
+    gpio_set_dir(DIODE_22, GPIO_OUT);
+    gpio_put(DIODE_22, 0);
 }
 
-void diode_14_mode(int mode)
+void diode_22_mode(int mode)
 {
-    gpio_put(DIODE_7, mode);
+    gpio_put(DIODE_22, mode);
 }
