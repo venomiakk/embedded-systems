@@ -90,7 +90,8 @@ int main(void)
     init_pwm_speaker();
 
     lcd_init();
-    lcd_draw_text(10, 10, "Hello, World!", 0xFFFF, 0x0000);
+    lcd_clear(WHITE);
+    lcd_draw_text(10, 10, "Hello, World!", WHITE, BLACK);
 
     play_melody();
 

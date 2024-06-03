@@ -17,6 +17,11 @@
 #define LCD_CMD 0
 #define LCD_DATA 1
 
+#define LCD_WIDTH 128
+#define LCD_HEIGHT 160
+#define BLACK 0x0000
+#define WHITE 0xFFFF
+
 static const uint8_t font[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, // 32 (space)
     0x00, 0x00, 0x5F, 0x00, 0x00, // 33 !
@@ -123,5 +128,6 @@ void lcd_set_address_window(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
 void lcd_draw_pixel(uint8_t x, uint8_t y, uint16_t color);
 void lcd_draw_char(uint8_t x, uint8_t y, char c, uint16_t color, uint16_t bg);
 void lcd_draw_text(uint8_t x, uint8_t y, const char *text, uint16_t color, uint16_t bg);
+void lcd_clear(uint16_t color);
 
 #endif // LCD_H

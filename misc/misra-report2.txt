@@ -1,3 +1,12 @@
+main.c:93:15: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-7.2]
+    lcd_clear(WHITE);
+              ^
+main.c:94:44: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-7.2]
+    lcd_draw_text(10, 10, "Hello, World!", WHITE, BLACK);
+                                           ^
+main.c:125:41: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-10.4]
+        if (distance < 0.15 && distance > 0)
+                                        ^
 accelerometer.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ACCELEROMETER_H
 ^
@@ -65,28 +74,40 @@ lcd.h:4:0: style: misra violation (use --rule-texts=<file> to get proper output)
 #define SPI_PORT spi1
 ^
 lcd.h:6:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LCD_RST_PIN  12
+#define LCD_RST_PIN 12
 ^
 lcd.h:7:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LCD_DC_PIN   8
+#define LCD_DC_PIN 8
 ^
 lcd.h:8:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LCD_BL_PIN   13
+#define LCD_BL_PIN 13
 ^
 lcd.h:10:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LCD_CS_PIN   9
+#define LCD_CS_PIN 9
 ^
 lcd.h:11:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LCD_CLK_PIN  10
+#define LCD_CLK_PIN 10
 ^
 lcd.h:12:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define LCD_MOSI_PIN 11
 ^
 lcd.h:14:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LCD_SCL_PIN  7
+#define LCD_SCL_PIN 7
 ^
 lcd.h:15:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
-#define LCD_SDA_PIN  6
+#define LCD_SDA_PIN 6
+^
+lcd.h:17:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_CMD 0
+^
+lcd.h:18:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_DATA 1
+^
+lcd.h:20:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_WIDTH 128
+^
+lcd.h:21:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
+#define LCD_HEIGHT 160
 ^
 lightsensor.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define LIGHTSENSOR_H
@@ -136,6 +157,15 @@ extern void init_distance_sensor(void);
 speaker.h:6:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void init_pwm_speaker(void);
             ^
+lcd.h:126:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+void lcd_init(void);
+     ^
+lcd.h:131:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+void lcd_clear(uint16_t color);
+     ^
+lcd.h:130:6: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+void lcd_draw_text(uint8_t x, uint8_t y, const char *text, uint16_t color, uint16_t bg);
+     ^
 speaker.h:12:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void play_melody(void);
             ^
@@ -148,3 +178,6 @@ extern void set_pwm_led(uint16_t value);
 distancesensor.h:10:14: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern float get_distance(void);
              ^
+speaker.h:10:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
+extern void dst_warning(void);
+            ^
