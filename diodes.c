@@ -2,8 +2,7 @@
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 
-
-static const uint16_t wrap = 500;
+static const uint16_t wrap = 595;
 
 void init_pwm_led(void)
 {

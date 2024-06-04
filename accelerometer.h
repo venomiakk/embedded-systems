@@ -2,12 +2,17 @@
 #define ACCELEROMETER_H
 
 #include <stdint.h>
+#include <stdbool.h>
 
 // Definicje I2C i ADXL345
 #define I2C_PORT i2c0
 #define SDA_PIN 4
 #define SCL_PIN 5
+
+// Adres urzadzenia na magistrali I2C
 #define ADXL345_ADDR 0x53
+
+#define ADXL345_EXPECTED_DEVID 0xE5
 
 // Rejestry ADXL345
 #define ADXL345_REG_DEVID 0x00
@@ -24,7 +29,7 @@
 #define Z_OFFSET -8
 
 extern void init_i2c0(void);
-extern void init_adxl345(void);
+extern bool init_adxl345(void);
 static void i2c_write_reg(uint8_t reg, uint8_t value);
 static void i2c_read_reg(uint8_t reg, uint8_t *buf, uint8_t len);
 extern void adxl345_read_data(float *x, float *y, float *z);

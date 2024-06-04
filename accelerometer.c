@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
+#include <stdbool.h>
 
 void init_i2c0(void)
 {
@@ -15,14 +16,24 @@ void init_i2c0(void)
     gpio_pull_up(SCL_PIN);
 }
 
-void init_adxl345(void)
+bool init_adxl345(void)
 {
+    // Sprawdzenie identyfikatora urzadzenia
+    uint8_t devid;
+    i2c_read_reg(ADXL345_REG_DEVID, &devid, 1);
+    if (devid != ADXL345_EXPECTED_DEVID)
+    {
+        printf("ADXL345: Wrong device ID: 0x%02X\n", devid);
+        return false;
+    }
     // Ustawienie trybu pracy
     i2c_write_reg(ADXL345_REG_POWER_CTL, 0x08); // Measure mode
     // Ustawienie formatu danych
     i2c_write_reg(ADXL345_REG_DATA_FORMAT, 0x08); // Full resolution, +/-2g
     // Kalibracja akcelerometru
     adxl345_calibrate();
+
+    return true;
 }
 
 void i2c_write_reg(uint8_t reg, uint8_t value)
@@ -42,9 +53,13 @@ void adxl345_read_data(float *x, float *y, float *z)
     int16_t raw_x, raw_y, raw_z;
     uint8_t buf[6];
     i2c_read_reg(ADXL345_REG_DATAX0, buf, 6);
+
+    // Zamiana 2 bajtow na liczbe calkowita 16-bitowa ze znakiem
     raw_x = ((int16_t)buf[1] << 8) | buf[0];
     raw_y = ((int16_t)buf[3] << 8) | buf[2];
     raw_z = ((int16_t)buf[5] << 8) | buf[4];
+
+    // Zamiana na przyspieszenie w g
     *x = (float)raw_x / 256.0;
     *y = (float)raw_y / 256.0;
     *z = (float)raw_z / 256.0;

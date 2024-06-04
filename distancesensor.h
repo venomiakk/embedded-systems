@@ -13,7 +13,7 @@ extern void init_distance_sensor(void);
 
 /**
  * @brief Mierzenie odległości na podstawie czasu trwania wysokiego impulsu na pinie ECHO
- * @return Odleglosc [m]
+ * @return Odleglosc [m], w przypadku zbyt dlugiego czasu oczekiwania -1
  */
 extern float get_distance(void);
 

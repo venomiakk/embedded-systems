@@ -8,6 +8,5 @@ Raspberry Pi Pico RC Car
 - [x] czujnik odległości - interakcja z glosniczkiem
 - [x] Czujnik natężenia światła - ADC - interakcja z dioda PWM 
 - [x] diody - GPIO, PWM
-- [ ] wyświetlacz LCD - SPI
 - [x] akcelerometr - I2C - interakcja z dioda GPIO
 

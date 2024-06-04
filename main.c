@@ -12,6 +12,7 @@
 #include "distancesensor.h"
 #include "accelerometer.h"
 #include "lcd.h"
+#include <stdbool.h>
 
 /*!
  *  @brief    Krótko co procedura robi.
@@ -45,7 +46,6 @@ int main(void)
     /*
         Attempting to connect to the WiFI
     */
-    //! while (cyw43_arch_wifi_connect_timeout_ms(wifiSSID, wifiPASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000))
     bool connection_status = cyw43_arch_wifi_connect_timeout_ms(wifiSSID, wifiPASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000);
     while (true == connection_status)
     {
@@ -78,8 +78,9 @@ int main(void)
     init_h_bridge(MOTOR_ACW_PIN, MOTOR_CW_PIN, MOTOR_PWM_PIN);
 
     // Akcelerometr
+    bool adxl345_status = false;
     init_i2c0();
-    init_adxl345();
+    adxl345_status = init_adxl345();
 
     init_light_sensor();
 
@@ -89,18 +90,13 @@ int main(void)
     init_distance_sensor();
     init_pwm_speaker();
 
-    // lcd_init();
-    // lcd_clear(BLACK);
-    // lcd_init();
-    // lcd_draw_text(10, 10, "Hello, World!", WHITE, BLACK);
-
     play_melody();
 
     uint16_t light_value;
     uint16_t light_trigger = 3500;
-    float x;
-    float y;
-    float z;
+    float accelX;
+    float accelY;
+    float accelZ;
     float distance;
     uint16_t fill = 0;
     while (true)
@@ -123,12 +119,12 @@ int main(void)
         // Kontrolowanie glosnika
         distance = get_distance();
         (void)printf("Distance: %f\n", distance);
-        if (distance < 0.20f && distance >= 0.10f)
+        if ((distance < 0.20f) && (distance >= 0.10f))
         {
             dst_warning1();
             (void)printf("Distance: %f\n", distance);
         }
-        else if (distance < 0.10f && distance >= 0.0f)
+        else if ((distance < 0.10f) && (distance >= 0.0f))
         {
             dst_warning2();
             (void)printf("Distance: %f\n", distance);
@@ -140,16 +136,32 @@ int main(void)
         sleep_ms(200);
 
         // Kontrolowanie przechylenia
-        adxl345_read_data(&x, &y, &z);
-        (void)printf("X: %f, Y: %f, Z: %f\n", x, y, z);
-        if (x > 0.5 || x < -0.5 || y > 0.5 || y < -0.5)
+        if (true == adxl345_status)
         {
-            diode_22_mode(1);
+            adxl345_read_data(&accelX, &accelY, &accelZ);
+            (void)printf("X: %f, Y: %f, Z: %f\n", accelX, accelY, accelZ);
+            if ((accelX > 0.5) || (accelX < -0.5) || (accelY > 0.5) || (accelY < -0.5))
+            {
+                diode_22_mode(1);
+            }
+            else
+            {
+                diode_22_mode(0);
+            }
         }
         else
         {
-            diode_22_mode(0);
+            int state = gpio_get(DIODE_22);
+            if (state == 1)
+            {
+                gpio_put(DIODE_22, 0);
+            }
+            else
+            {
+                gpio_put(DIODE_22, 1);
+            }
         }
+
         sleep_ms(200);
     }
 

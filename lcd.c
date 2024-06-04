@@ -4,10 +4,10 @@
 
 
 void lcd_send(uint8_t value, uint8_t mode) {
-    gpio_put(LCD_CS_PIN, 0);
+    gpio_put(LCD_CS_PIN, 1);
     gpio_put(LCD_DC_PIN, mode);
     spi_write_blocking(SPI_PORT, &value, 1);
-    gpio_put(LCD_CS_PIN, 1);
+    gpio_put(LCD_CS_PIN, 0);
 }
 
 void lcd_reset() {

@@ -3,8 +3,6 @@
 #include "pico/stdlib.h"
 #include "hardware/adc.h"
 
-
-
 void init_light_sensor(void)
 {
     adc_init();
