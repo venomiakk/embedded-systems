@@ -118,15 +118,6 @@ extern const char *cgi_pwmspeaker_handler(int iIndex, int iNumParams, char *pcPa
     {
         float frequency = atof(pcValue[0]);
         printf("frequency: %f\n", frequency);
-        /* Error
-         *    *** PANIC ***
-         *    Attempted to sleep inside of an exception handler; use busy_wait if you must
-         *
-         * przez sleep_ms() w play_tone() ale nwm czemu
-         * busy_wait_ms() rozwiazuje problem ale to chyba nie jest najlepsze rozwiazanie xd
-         * bo tam jest jakies przerwanie czy jakis wyjatek i pico jest "niestabilne"
-         * i ten sleep_ms() cos psuje
-         */
         play_tone_timer(frequency, 500);
     }
 

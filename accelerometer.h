@@ -28,10 +28,34 @@
 #define Y_OFFSET 1
 #define Z_OFFSET -8
 
+/**
+ * @brief Inicjalizacja interfesju I2C
+ */
 extern void init_i2c0(void);
+/**
+ * @brief Inicjalizacja akcelerometru ADXL345
+ * @return true - sukces, false - blad
+ */
 extern bool init_adxl345(void);
+/**
+ * @brief Funkcja zapisujaca wartosc do rejestru akcelerometru
+ * @param reg Adres rejestru
+ * @param value Bajt danych
+ */
 static void i2c_write_reg(uint8_t reg, uint8_t value);
+/**
+ * @brief Funkcja odczytujaca wartosc z rejestru akcelerometru
+ * @param reg Adres rejestru
+ * @param buf Bufora na odczytane dane
+ * @param len Dlugosc danych do odczytu (ilosc bajtow)
+ */
 static void i2c_read_reg(uint8_t reg, uint8_t *buf, uint8_t len);
+/**
+ * @brief Odczytywanie danych z osi X, Y, Z
+ * @param x Wartosc osi X
+ * @param y Wartosc osi Y
+ * @param z Wartosc osi Z
+ */
 extern void adxl345_read_data(float *x, float *y, float *z);
 
 /**

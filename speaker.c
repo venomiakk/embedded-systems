@@ -11,12 +11,9 @@ const uint16_t PWM_RANGE = 65535;
 void init_pwm_speaker(void)
 {
     gpio_set_function(SPEAKER_PIN, GPIO_FUNC_PWM);
-    // slice: 0-7
     uint slice_num = pwm_gpio_to_slice_num(SPEAKER_PIN);
-    // channel: A-B [0-1]
     uint channel_num = pwm_gpio_to_channel(SPEAKER_PIN);
 
-    // pwm_set_enabled(slice_num, true);
     pwm_set_wrap(slice_num, PWM_RANGE);
 }
 

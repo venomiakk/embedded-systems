@@ -102,19 +102,49 @@ static const int melody[] = {
 static const int noteDurations[] = {
     4, 8, 8, 4, 4, 4, 4, 4};
 
+/**
+ * @brief Inicjalizacja PWM dla glosnika
+ */
 extern void init_pwm_speaker(void);
 
+/**
+ * @brief Granie zadanej czestotliwosci
+ * @param frequency Czestotliwosc dzwieku 
+ */
 static void play_tone(float frequency);
 
+/**
+ * @brief Alarm 1 uruchamiany przez czujnik odleglosci
+ */
 extern void dst_warning1(void);
+/**
+ * @brief Alarm 2 uruchamiany przez czujnik odleglosci 
+ */
 extern void dst_warning2(void);
 
+/**
+ * @brief Granie melodii poczatkowej 
+ */
 extern void play_melody(void);
 
+/**
+ * @brief Granie dzwieku przez zadany czas
+ * @param frequency Czestotliwosc dzwieku
+ * @param duration_ms Czas trwania dzwieku w milisekundach
+ */
 extern void play_tone_timer(float frequency, uint32_t duration_ms);
 
+/**
+ * @brief Wylaczenie PWM
+ * @param slice_num Numer kanalu PMW [0-7]
+ */
 static void disable_pwm(uint slice_num);
 
+/**
+ * @brief Funkcja wywolywana przez timer, wylacza PWM
+ * @param rt Wskaznik na timer
+ * @return False
+ */
 static bool timer_callback(repeating_timer_t *rt);
 
 #endif

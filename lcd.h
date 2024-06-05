@@ -124,13 +124,59 @@ static const uint8_t font[] = {
     0x00, 0x06, 0x09, 0x09, 0x06  // 127 (del)
 };
 
+/**
+ * @brief Wysylanie danych do wyswietlacza
+ * @param value Bajt danych
+ * @param mode 1 - dane, 0 - komenda
+ */
 void lcd_send(uint8_t value, uint8_t mode);
+
+/**
+ * @brief Resetowanie ekranu
+ */
 void lcd_reset(void);
+/**
+ * @brief Inicjalizacja ekranu oraz interfejsu SPI
+ */
 void lcd_init(void);
+/**
+ * @brief Wysylanie komendy ustawiajacej obszar rysowania
+ * @param x0 Poczatkowa wspolrzedna x
+ * @param y0 Poczatkowa wspolrzedna y
+ * @param x1 Koncowa wspolrzedna x
+ * @param y1 Koncowa wspolrzedna y
+ */
 void lcd_set_address_window(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
+/**
+ * @brief Rysowanie pixela na ekranie
+ * @param x Wspolrzedna x
+ * @param y Wspolrzedna y
+ * @param color Kolor pixela
+ */
 void lcd_draw_pixel(uint8_t x, uint8_t y, uint16_t color);
+/**
+ * @brief Rysowanie znakow na ekranie
+ * @param x Lokalizacja x
+ * @param y Lokalizacja y
+ * @param c Znak
+ * @param color Kolor znaku
+ * @param bg Kolor tla
+ */
 void lcd_draw_char(uint8_t x, uint8_t y, char c, uint16_t color, uint16_t bg);
+/**
+ * @brief Rysowanie tekstu na ekranie
+ * @param x Poczatkowa wspolrzedna x
+ * @param y Poczatkowa wspolrzedna y
+ * @param text Tekst
+ * @param color Kolor tekstu
+ * @param bg Kolor tla
+ */
 void lcd_draw_text(uint8_t x, uint8_t y, const char *text, uint16_t color, uint16_t bg);
+
+/**
+ * @brief Wypelnienie ekranu kolorem
+ * @param color kolor
+ */
 void lcd_clear(uint16_t color);
 
 #endif // LCD_H

@@ -1,3 +1,12 @@
+main.c:48:5: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-3.1]
+    // /*
+    ^
+main.c:58:5: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-3.1]
+    // /*
+    ^
+main.c:63:5: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-3.1]
+    // /*
+    ^
 accelerometer.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define ACCELEROMETER_H
 ^
@@ -403,12 +412,6 @@ speaker.h:97:0: style: misra violation (use --rule-texts=<file> to get proper ou
 ssi.h:2:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5]
 #define SSI_H
 ^
-ssi.h:8:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
-extern void ssi_init(void);
-            ^
-cgi.h:13:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
-extern void cgi_init(void);
-            ^
 servo.h:11:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7]
 extern void setServo(int servoPin, float startMillis);
             ^

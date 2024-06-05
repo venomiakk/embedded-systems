@@ -48,6 +48,6 @@ float get_distance(void)
 
     // Konwersja na sekundy i obliczenie odległości (prędkość dźwięku to około 343 metrów na sekundę)
     float distance = (float)duration / 1000000.0f * 343.0f / 2.0f;
-    // (void)printf("Odleglosc: %f\n", distance);
+
     return distance;
 }

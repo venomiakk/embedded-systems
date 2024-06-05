@@ -30,9 +30,9 @@ void lcd_init() {
 
     gpio_init(LCD_BL_PIN);
     gpio_set_dir(LCD_BL_PIN, GPIO_OUT);
-    gpio_put(LCD_BL_PIN, 1); // Turn on the backlight
+    gpio_put(LCD_BL_PIN, 1); 
 
-    // Initialize SPI
+    // Inicjalizacja SPI
     spi_init(SPI_PORT, 1000 * 1000);
     gpio_set_function(LCD_CLK_PIN, GPIO_FUNC_SPI);
     gpio_set_function(LCD_MOSI_PIN, GPIO_FUNC_SPI);
@@ -44,8 +44,6 @@ void lcd_init() {
     sleep_ms(150);
     lcd_send(0x11, LCD_CMD); // Exit sleep mode
     sleep_ms(255);
-
-    // More initialization commands as needed...
 
     lcd_send(0x29, LCD_CMD); // Display ON
 }
@@ -89,7 +87,7 @@ void lcd_draw_char(uint8_t x, uint8_t y, char c, uint16_t color, uint16_t bg) {
 void lcd_draw_text(uint8_t x, uint8_t y, const char* text, uint16_t color, uint16_t bg) {
     while (*text) {
         lcd_draw_char(x, y, *text++, color, bg);
-        x += 6; // Move to the next character position
+        x += 6;
     }
 }
 

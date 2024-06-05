@@ -14,30 +14,19 @@
 #include "lcd.h"
 #include <stdbool.h>
 
-/*!
- *  @brief    Krótko co procedura robi.
- *  @param nazwa  parametru 1
- *             opis parametru 1
- *  @param nazwa  parametru 2
- *             opis parametru 2
- *  @param nazwa  parametru n
- *             opis parametru n
- *  @returns  np. tak: true on success, false otherwise
- *  @side effects:
- *            efekty uboczne
- */
-
 int main(void)
 {
+
     /*
     WIFI Credentials
     */
-    const char wifiSSID[] = "WLAN1_home";
-    const char wifiPASSWORD[] = "rX16Hba7HvZ";
+    const char wifiSSID[] = "";
+    const char wifiPASSWORD[] = "";
 
     /*
         Initialise all needed resources
     */
+
     stdio_init_all();
     cyw43_arch_init();
     cyw43_arch_enable_sta_mode();
